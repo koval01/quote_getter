@@ -34,8 +34,8 @@ class Quote:
 @app.route("/")
 def get() -> jsonify:
     try:
-        data = Quote().translated()
-        return jsonify({"success": len(data["content"]) != 0, "data": data})
+        data = Quote()
+        return jsonify({"success": len(data) != 0, "data": data})
     except Exception as e:
         return jsonify({"success": False, "exception": type(e).__name__})
 
